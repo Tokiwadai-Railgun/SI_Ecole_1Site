@@ -9,5 +9,5 @@
 
 </style>
 
-<h1>Welcome to SI_Ecole_1Site</h1>
-<a href="/login">Click here to login</a>
+<h1>Bienvenue à l'École d'Arthur</h1>
+<a href="/login">Cliquer ici pour vous connecter</a>

@@ -2,7 +2,7 @@
     async function submitHandler(event) {
         const formData = await event.request.formData();
     }
-    export let name =" :)";
+    export let name ="";
 </script>
 
 <form action="" on:submit={submitHandler}>
