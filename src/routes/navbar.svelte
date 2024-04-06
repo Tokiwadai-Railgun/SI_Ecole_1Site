@@ -2,7 +2,6 @@
     <link rel="stylesheet" type="text/css" href="/navbar.css">
 </svelte:head>
 
-
 <navbar>
     <!-- svelte-ignore a11y-img-redundant-alt -->
     <img src="/Logo école.png" alt="Photo de profil">
