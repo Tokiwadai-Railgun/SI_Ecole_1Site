@@ -1,0 +1,35 @@
+navbar ul {
+    list-style: none;
+    width: 15vw;
+    max-width: 250px;
+    min-width: 200px;
+    padding: 0;
+}
+
+navbar li{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 10px;
+}
+
+navbar svg{
+    fill: none;
+    padding: 0 15px;
+    stroke: #000;
+}
+
+navbar a{
+    text-decoration: none;
+    color: #000;
+}
+
+/*------------------style au survol------------------*/
+navbar li:hover{
+    background: #f1f1f1;
+}
+
+navbar li:hover svg{
+    fill: #000;
+    stroke: #f1f1f1;
+}
