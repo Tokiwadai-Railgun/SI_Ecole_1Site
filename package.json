@@ -32,11 +32,17 @@
 		"vite": "^5.0.3"
 	},
 <<<<<<< HEAD
+<<<<<<< HEAD
 	"type": "module"
 =======
+=======
+>>>>>>> 5d05c2d (patched package.json and package-lock.json)
 	"type": "module",
 	"dependencies": {
 		"mysql2": "^3.9.3"
 	}
+<<<<<<< HEAD
 >>>>>>> 7458ac5f93d4ccab6ea4cf6ff1010a88eb02c2f4
+=======
+>>>>>>> 5d05c2d (patched package.json and package-lock.json)
 }
