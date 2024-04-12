@@ -8,7 +8,6 @@ export async function GET() {
 
     try {
         let result = await mysqlconn.query("SELECT * FROM person").then(function ([rows, fields]) {
-            console.log(rows);
             return rows;
         })
 

@@ -9,7 +9,6 @@ export async function GET({ url }: RequestEvent) {
 
     try {
         let result = await mysqlconn.query("SELECT * FROM person WHERE email='" + email + "'").then(function ([rows, fields]) {
-            console.log(rows);
             return rows;
         })
 
