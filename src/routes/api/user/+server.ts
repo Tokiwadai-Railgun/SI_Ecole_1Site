@@ -19,3 +19,10 @@ export async function GET({ url }: RequestEvent) {
         console.log(err)
     }
 }
+
+export async function POST({ url }: RequestEvent) {
+    const email = "";
+    const first_name = "";
+    const last_name = "";
+    const phoneNumber = "";
+}
