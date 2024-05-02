@@ -30,7 +30,7 @@ export async function POST({request, cookies}) {
         console.log(result[0].password)
         if (result[0].password != password) return json('Password does not match', {status: 402})
 
-        const token = generateToken(username)
+        const token = generateToken(result[0].person_id)
         return json(token, {status: 201});
     } catch(err) {
         console.error("Error fetching data")
