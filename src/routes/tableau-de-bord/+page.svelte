@@ -1,4 +1,8 @@
+<svelte:head>
+    <link rel="stylesheet" type="text/css" href="/dashboard.css">
+</svelte:head>
 <script lang="ts">
+    export let data;
 	import Navbar from "../navbar.svelte";
 	async function fetchData() {
     try {
@@ -16,6 +20,18 @@
 
 // Appelez la fonction pour récupérer les données
 fetchData();
-</script>
 
-<Navbar />
+
+</script>
+<div class="global-section">
+    <Navbar />
+    <main>
+        <h1>Bienvenue sur le tableau de bord {data.first_name}</h1>
+        <div class="widget-cont">
+            <div>Cour du jour</div>
+            <div>Devoir</div>
+            <div>Note Récente</div>
+            <div>Information</div>
+        </div>
+    </main>
+</div>
