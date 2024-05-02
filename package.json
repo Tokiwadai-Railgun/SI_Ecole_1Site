@@ -33,6 +33,7 @@
 	},
 	"type": "module",
 	"dependencies": {
+		"jsonwebtoken": "^9.0.2",
 		"mysql2": "^3.9.3"
 	}
 }

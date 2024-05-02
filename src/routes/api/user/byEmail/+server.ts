@@ -1,3 +1,4 @@
+
 import { mysqlconFn } from '$lib/mysql';
 import { fail, json } from '@sveltejs/kit';
 import type { RequestEvent } from './$types';
@@ -24,11 +25,4 @@ export async function GET({ url }: RequestEvent) {
         console.error("Error fetching datas")
         console.log(err)
     }
-}
-
-export async function POST({ url }: RequestEvent) {
-    const email = "";
-    const first_name = "";
-    const last_name = "";
-    const phoneNumber = "";
 }

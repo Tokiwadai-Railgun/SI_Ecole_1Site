@@ -21,7 +21,24 @@
     console.log("Last Name:", lastName);
     console.log("Email:", email);
   }
+
+  let tabs = [
+    {tabname: "Home", path:"/"},
+    {tabname: "Devoirs", path:"/devoirs"},
+    {tabname: "EDT", path:"/edt"},
+    {tabname: "Notes", path:"/notes"},
+    {tabname: "bulletin", path:"/bulletin"},
+
+  ]
 </script>
+<ul>
+  {#each tabs as tab}
+    <li><a href={tab.path}>{tab.tabname}</a></li>
+
+     <!-- content here -->
+  {/each}
+
+</ul>
 
 <style>
   form {
