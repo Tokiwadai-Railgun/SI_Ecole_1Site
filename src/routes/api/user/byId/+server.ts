@@ -4,12 +4,11 @@ import { json } from '@sveltejs/kit';
 import type { RequestEvent } from './$types';
 
 export async function GET({ url }: RequestEvent) {
-    const email : string = url.searchParams.get('id') ?? "null";
-    console.log(email)
+    const id : string = url.searchParams.get('id') ?? "null";
     const mysqlconn = await mysqlconFn();
 
     try {
-        const result = await mysqlconn.query("SELECT * FROM person WHERE id='" + id + "'").then(function ([rows]) {
+        const result = await mysqlconn.query("SELECT * FROM person WHERE person_id='" + id + "'").then(function ([rows]) {
             return rows;
         })
 
