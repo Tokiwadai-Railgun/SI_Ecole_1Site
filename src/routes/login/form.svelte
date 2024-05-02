@@ -1,27 +1,28 @@
 <script lang="ts">
+	import { goto } from "$app/navigation";
 	import { redirect } from "@sveltejs/kit";
 
-    let username = "";
-    let password = "";
-    async function submitHandler() {
-        const response = await fetch("/api/login", {
-            method: "POST",
-            headers: {
-                'Content-Type': 'application/json'
-            },
+  let username = "";
+  let password = "";
+  async function submitHandler() {
+      const response = await fetch("/api/login", {
+          method: "POST",
+          headers: {
+              'Content-Type': 'application/json'
+          },
 
-            body: JSON.stringify({ "username": username, "password": password})
-        })
+          body: JSON.stringify({ "username": username, "password": password})
+      })
 
-        if (response.ok) {
-            const responseBody = await response.json()
-            document.cookie = "accessToken="+responseBody+";";
-            throw redirect(303, "/")
-        }
-    }
+      if (response.ok) {
+        const responseBody = await response.json()
+        document.cookie = "accessToken="+responseBody+";";
+        await goto("/tableau-de-bord")
+      }
+  }
 </script>
 
-<form on:submit={submitHandler}>
+<form on:submit|preventDefault={submitHandler}>
     <input type="text" placeholder="username" bind:value={username} name="username" required>
     <input type="password" placeholder="password" bind:value={password} name="password" required>
     <button type="submit">Submit</button>

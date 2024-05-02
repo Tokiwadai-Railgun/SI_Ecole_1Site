@@ -14,7 +14,7 @@ export function verifyToken(token: string) {
             return null
         }
 
-      return decoded
+      return decoded;
 
     })
 
