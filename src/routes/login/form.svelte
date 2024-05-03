@@ -1,6 +1,6 @@
 <script lang="ts">
+  import { page } from "$app/stores"
 	import { goto } from "$app/navigation";
-	import { redirect } from "@sveltejs/kit";
 
   let username = "";
   let password = "";
@@ -26,4 +26,6 @@
     <input type="text" placeholder="username" bind:value={username} name="username" required>
     <input type="password" placeholder="password" bind:value={password} name="password" required>
     <button type="submit">Submit</button>
+
+  <pre>{JSON.stringify($page.params, null, 2)}</pre>
 </form>
