@@ -1,4 +1,5 @@
 import { json } from "@sveltejs/kit";
+import { error } from "@sveltejs/kit";
 import { generateToken } from "$lib/jwt";
 import { mysqlconFn } from "$lib/mysql";
 import { verifyToken } from "$lib/jwt";
@@ -25,8 +26,8 @@ export async function POST({request, cookies}) {
         // now that we have email and password check if they match database data
 
         const count = Object.keys(result).length;
-        if (count == 0) throw new Error(412, "No identity found, please contacy your server admin for further informations")
-        if (count > 1) throw new Error(500, "Multiple identity found, please contact your server admin for further informations")
+        if (count == 0) throw error(404, "User not found")
+        if (count > 1) throw error(500, "Internal server error")
 
         console.log(result[0].password)
         if (result[0].password != password) return json('Password does not match', {status: 401})
