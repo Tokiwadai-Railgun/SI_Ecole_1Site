@@ -1,6 +1,7 @@
 import { json } from "@sveltejs/kit";
 import { generateToken } from "$lib/jwt";
 import { mysqlconFn } from "$lib/mysql";
+import { verifyToken } from "$lib/jwt";
 
 export async function POST({request, cookies}) {
     const {username, password} = await request.json();
@@ -28,14 +29,14 @@ export async function POST({request, cookies}) {
         if (count > 1) throw new Error(500, "Multiple identity found, please contact your server admin for further informations")
 
         console.log(result[0].password)
-        if (result[0].password != password) return json('Password does not match', {status: 402})
+        if (result[0].password != password) return json('Password does not match', {status: 401})
 
         const token = generateToken(result[0].person_id)
         return json(token, {status: 201});
     } catch(err) {
         console.error("Error fetching data")
         console.log(err)
-        return json('Data not found', {status: 402});
+        return json('User not found', {status: 404});
     }
 
 }
