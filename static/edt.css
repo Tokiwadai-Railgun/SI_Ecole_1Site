@@ -1,0 +1,14 @@
+.global-section{
+    display: flex;
+    width: calc(100% - 20px);
+    height: calc(100vh - 20px);
+    padding: 10px;
+}
+
+main{
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
