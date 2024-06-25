@@ -1,7 +1,6 @@
 
 import { mysqlconFn } from '$lib/mysql';
 import { json } from '@sveltejs/kit';
-import type { RequestEvent } from './$types';
 
 export async function GET() {
     const mysqlconn = await mysqlconFn();
