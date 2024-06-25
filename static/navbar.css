@@ -1,3 +1,13 @@
+body{
+    margin: 0;
+}
+
+navbar{
+    background: #e1e1e1;
+    border-radius: 10px;
+    padding: 10px;
+}
+
 navbar ul {
     list-style: none;
     width: 15vw;
@@ -26,10 +36,10 @@ navbar a{
 
 /*------------------style au survol------------------*/
 navbar li:hover{
-    background: #f1f1f1;
+    background: #d1d1d1;
 }
 
 navbar li:hover svg{
     fill: #000;
-    stroke: #f1f1f1;
+    stroke: #d1d1d1;
 }
