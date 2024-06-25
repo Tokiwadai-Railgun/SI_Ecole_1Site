@@ -12,3 +12,9 @@ main{
     align-items: center;
     flex-direction: column;
 }
+
+.calendar{
+    display: flex;
+    justify-content: space-evenly;
+}
+
