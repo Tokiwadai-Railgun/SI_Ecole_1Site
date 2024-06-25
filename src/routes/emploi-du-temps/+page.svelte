@@ -5,11 +5,8 @@
 	import Navbar from "../navbar.svelte";
     import Edtteacher from "../edtteacher.svelte";
     import Edtstudent from "../edtstudent.svelte";
-    async function getRole(id: string) {
-        const role = await fetch(`http://localhost:5173/api/user/byId?id=${id}`);
-    }
+    
     export let data;
-    console.log(data.role);
     let pageContent;
 
     if (data.role === "teacher"){
