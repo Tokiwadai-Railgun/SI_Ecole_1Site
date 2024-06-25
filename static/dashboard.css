@@ -8,6 +8,7 @@
 main{
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: top;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
 }
