@@ -16,7 +16,6 @@ export async function GET({ url }) {
 
   try {
     let result = await mysqlconn.query(query).then(function ([rows, fields]) {
-      console.log(rows[0])
       return rows;
     })
 

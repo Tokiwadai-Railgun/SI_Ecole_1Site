@@ -17,8 +17,6 @@ export async function GET({ url }) {
 
   try {
     let result = await mysqlconn.query(query).then(function ([rows, fields]) {
-      console.log(rows[0])
-      console.log(typeof(rows[0].date))
       return rows;
     })
 
@@ -27,6 +25,6 @@ export async function GET({ url }) {
   catch(err) {
     console.error("Error fetching datas")
     console.log(err)
-    throw error(404, "User not found")
+    throw error(500, "Internale server Error")
   }
 }
