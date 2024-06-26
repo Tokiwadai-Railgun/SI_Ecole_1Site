@@ -5,7 +5,7 @@ export async function GET({ url }) {
   const mysqlconn = await mysqlconFn();
   const userId = url.searchParams.get("userId")
 
-  if (!userId) throw error(400, "userId needed")
+  if (!userId) throw error(400, "Missing parameter")
 
   const query = "SELECT title, description, files, end_date, teacher_id FROM homework, student WHERE student.class_id = homework.class_id AND student.user_id =" + userId
 

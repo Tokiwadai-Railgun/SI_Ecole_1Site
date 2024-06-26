@@ -19,8 +19,7 @@ export async function POST({request, cookies}) {
   const mysqlconn = await mysqlconFn();
 
   try {
-    const result = await mysqlconn.query("SELECT person_id, password FROM authentication WHERE email='" + username + "';").then(function ([rows]) {
-        console.log(rows)
+    const result = await mysqlconn.query("SELECT authentication.person_id, password, role FROM authentication JOIN person ON authentication.person_id = person.person_id WHERE authentication.email='" + username + "';").then(function ([rows]) {
         return rows;
     })
     // now that we have email and password check if they match database data
@@ -30,12 +29,7 @@ export async function POST({request, cookies}) {
     if (count > 1) throw error(500, "Internal server error")
 
     // TODO: Get the user role from the person table
-
-
-
-
-
-    console.log(result[0].password)
+    console.log("login role", result[0])
     if (result[0].password != password) return json('Password does not match', {status: 401})
 
     const token = generateToken(result[0].person_id, result[0].role)

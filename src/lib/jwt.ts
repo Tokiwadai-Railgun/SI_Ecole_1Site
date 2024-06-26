@@ -1,9 +1,10 @@
 import {SECRET_KEY_TOKEN} from '$env/static/private'
-import jwt from "jsonwebtoken"
+import jwt from "jsonwebtoken";
 
 export function generateToken(person_id: string, role: string) {
   const currentTimestamp = Date.now();
   const expirationTimestamp = currentTimestamp + (8 * 60 * 60 * 1000);
+  console.log("role", role)
   return jwt.sign({ sub: person_id, role: role, exp: expirationTimestamp, iat: currentTimestamp}, SECRET_KEY_TOKEN);
 }
 
