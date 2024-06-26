@@ -9,7 +9,7 @@ export async function GET({ url }) {
 
   if (!studentId || !startDate || !endDate) throw error(400, "Missing informations")
 
-  const query = `select cours.topic AS 'cours', date, teacher_name, class.topic AS 'className' from cours
+  const query = `select cours.topic AS 'cours', date, teacher_name, class.topic AS 'className', period from cours
     JOIN class ON cours.class_id = class.class_id JOIN teacher ON cours.teacher_id = teacher.teacher_id
     JOIN course_date on cours_id = course_id AND cours.class_id
     JOIN student ON student.class_id = class.class_id
