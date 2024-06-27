@@ -1,11 +1,11 @@
 <script lang="ts">
   async function testAddAPI() {
-    const response = await fetch("http://localhost:5173/api/edt", {
+    const response = await fetch("http://localhost:5173/api/homeworks", {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({courseId: 1, date: "2024-06-26"}),
+      body: JSON.stringify({title: "testHomework", endDate: "2024-06-26", description: "JustATestHomework", classId: 1}),
     });
 
     console.log(response)
