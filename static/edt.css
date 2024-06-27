@@ -15,6 +15,28 @@ main{
 
 .calendar{
     display: flex;
+    flex-direction: column;
+    height: 80%;
     justify-content: space-evenly;
 }
 
+.period{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.period p{
+    width: 50%;
+    text-align: center;
+    font-weight: 400;
+}
+
+.heading{
+    width: 100%!important;
+    font-weight: 600!important;
+}
+
+.navigation-buttons{
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -1,11 +1,23 @@
+<script>
+    export let filteredCourses = [];
+    export let currentDate;
+
+    const cours1 = (filteredCourses.length > 0 && filteredCourses.find(course => course.period === 'matin')?.cours) || "Pas de cours";
+    const cours2 = (filteredCourses.length > 0 && filteredCourses.find(course => course.period === 'midi')?.cours) || "Pas de cours";
+    const classe1 = (filteredCourses.length > 0 && filteredCourses.find(course => course.period === 'matin')?.teacher_name) || "Pas de classe";
+    const classe2 = (filteredCourses.length > 0 && filteredCourses.find(course => course.period === 'midi')?.teacher_name) || "Pas de classe";
+</script>
+
 <div class="calendar">
-    <h2>Date du jour</h2>
-    <div class="matin">
-        <p>cours</p>
-        <p>prof</p>
+    <h2>Date du jour: {currentDate.toDateString()}</h2>
+    <div class="period">
+        <p class="heading">Matin</p>
+        <p>{cours1}</p>
+        <p>{classe1}</p>
     </div>
-    <div class="aprem">
-        <p>cours</p>
-        <p>prof</p>
+    <div class="period">
+        <p class="heading">Après-midi</p>
+        <p>{cours2}</p>
+        <p>{classe2}</p>
     </div>
 </div>
