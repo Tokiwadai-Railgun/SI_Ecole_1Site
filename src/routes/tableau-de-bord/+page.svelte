@@ -3,7 +3,7 @@
 </svelte:head>
 <script lang="ts">
     export let data;
-	import Navbar from "../navbar.svelte";
+	import Navbar from "$lib/modules/navbar.svelte";
 // 	async function fetchData() {
 //     try {
 //         const response = await fetch('/src/routes/api/users/+server.ts');

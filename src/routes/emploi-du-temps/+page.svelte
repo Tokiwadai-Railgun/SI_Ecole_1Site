@@ -3,9 +3,9 @@
 </svelte:head>
 
 <script lang="ts">
-    import Navbar from "../navbar.svelte";
-    import Edtteacher from "../edtteacher.svelte";
-    import Edtstudent from "../edtstudent.svelte";
+    import Navbar from "$lib/modules/navbar.svelte";
+    import Edtteacher from "$lib/modules/edtteacher.svelte";
+    import Edtstudent from "$lib/modules/edtstudent.svelte";
     
     export let data;
     let pageContent;

@@ -11,7 +11,7 @@ export async function POST({request, cookies}) {
   if (cookies.get('accessToken'))  {
       const token: null|object = verifyToken(cookies.get('accessToken'))
 
-      if (token) return cookies.get('accessToken')
+      if (token) return {accessToken: cookies.get('accessToken')}
   }
 
   console.log(cookies.get('accessToken'))

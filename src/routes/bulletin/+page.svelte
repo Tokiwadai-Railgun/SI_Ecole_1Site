@@ -3,7 +3,7 @@
 </svelte:head>
 
 <script lang="ts">
-    import Navbar from "../navbar.svelte";
+    import Navbar from "$lib/modules/navbar.svelte";
 </script>
 
 <div class="global-section">
